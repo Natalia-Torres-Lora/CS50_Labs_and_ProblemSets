@@ -7,8 +7,6 @@
 * Problem Sets
 * Practice Problems
 * Labs
-* Getting Started
-* Contributing
 * Problem Sets
 
 Each problem set is a programming assignment that tests your knowledge of the topics covered in the course. The problem sets are divided into weeks and can be found in their respective directories.
@@ -19,4 +17,8 @@ The practice problems are small coding challenges that help reinforce the concep
 
 ## Labs
 
-The labs are in-class activities that help you apply the concepts covered in the course to real-world scenarios. They can be found in the labs directory. 
+The labs are in-class activities that help you apply the concepts covered in the course to real-world scenarios. They can be found in the labs directory.
+
+## Problem Sets 
+
+The problems sets complete the evaluation of the understanding of the class material.
