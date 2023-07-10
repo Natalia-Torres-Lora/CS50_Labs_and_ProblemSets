@@ -6,14 +6,44 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            document.addEventListener('DOMContentLoaded', function(){
-                let redB = document.getElementById('red');
+            document.addEventListener('DOMContentLoaded', function() {
 
-                redB.addEventListener('click', function() {
-                    redB.style.backgroundColor = 'red';
-                    let message = document.querySelector('p')
-                    message.
+            // part 1. Questions with logic to change buttons color for corect and incorrect answers
+            //display message for correct or incorrect
+
+            let redButtons = document.querySelectorAll('.red');
+            let greenButton = document.querySelector('.green');
+            let message = document.querySelector('p');
+
+            redButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    button.style.backgroundColor = 'red';
+                    message.innerHTML = 'Incorrect ;(';
+                });
             });
+
+            greenButton.addEventListener('click', function(){
+                greenButton.style.backgroundColor = 'green';
+                message.innerHTML = 'Correct!';
+
+            });
+
+            //part 2: Checking the answer to the free response question
+
+
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                let answer = document.querySelector('#answer');
+                let message2 = document.querySelector('.message');
+                if (answer.value.toLowerCase() === "mary shelley"){
+                    answer.style.backgroundColor = 'green';
+                    message2.innerHTML = 'Correct!';
+                }else {
+                    answer.style.backgroundColor = 'red';
+                    message2.innerHTML = 'Incorrect ;(';
+                }
+            });
+
 
         });
             // TODO: Add code to check answers to questions
@@ -22,7 +52,7 @@
     <body>
         <div class="header">
             <h1>Trivia!</h1>
-        </div>s
+        </div>
 
         <div class="container">
             <div class="section">
@@ -30,16 +60,23 @@
                 <hr>
                 <h3>In what year did the Berlin wall fall?</h3>
                 <p></p>
-                <button id="red">1995</button>
-                <button id="red">1971</button>
-                <button id="green">1989</button>
+
+                <button class="red">1995</button>
+                <button class="red">1971</button>
+                <button class="green">1989</button>
                 <!-- TODO: Add multiple choice question here -->
             </div>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
+                <h3>Who is the author of the novel Frankenstein?</h3>
+                <p class ="message"></p>
                 <!-- TODO: Add free response question here -->
+                <form>
+                    <input type="text" autocomplete="off" id="answer" placeholder="Answer text">
+                    <input type="submit" placeholder = "Check Answer">
+                </form>
             </div>
         </div>
     </body>
